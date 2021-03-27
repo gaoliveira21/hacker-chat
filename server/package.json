@@ -1,17 +1,21 @@
 {
-  "name": "client",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "user01": "node index.js --username gabriel --room sala01 --hostUri http://localhost:9898",
+    "start": "node src/",
+    "dev": "npx nodemon src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "blessed": "^0.1.81"
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
