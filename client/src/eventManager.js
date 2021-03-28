@@ -22,6 +22,21 @@ export default class EventManager {
     this.#updateUsersComponent()
   }
 
+  disconnectUser(user) {
+    const { userName, id } = user
+    this.#allUsers.delete(id)
+
+    this.#updateActivityLogComponent(`${userName} left!`)
+    this.#updateUsersComponent()
+  }
+
+  message(message) {
+    this.componentEmitter.emit(
+      constants.events.app.MESSAGE_RECEIVED,
+      message
+    )
+  }
+
   newUserConnected(message) {
     const user = message
     this.#allUsers.set(user.id, user.userName)
@@ -48,6 +63,6 @@ export default class EventManager {
       .filter(fn => fn !== 'constructor')
       .map(name => [name, this[name].bind(this)])
 
-      return new Map(functions)
+    return new Map(functions)
   }
 }
