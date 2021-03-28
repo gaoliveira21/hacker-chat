@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "user01": "node index.js --username gabriel --room sala01 --hostUri http://localhost:9898",
+    "user02": "node index.js --username rafael --room sala01 --hostUri http://localhost:9898",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
